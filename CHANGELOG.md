@@ -1,3 +1,9 @@
+# 1.4.0 (2020-08-03)
+
+### Features
+
+- make the code as concise and easy to understand as possible ([2a731bc](https://github.com/electron-react-boilerplate/electron-react-boilerplate/commit/2a731bc2b28763b742e3c725e41ae09e7534e9a2))
+
 # 1.3.0
 
 - Fixes E2E tests ([#2516](https://github.com/electron-react-boilerplate/electron-react-boilerplate/pull/2516))
