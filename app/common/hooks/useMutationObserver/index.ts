@@ -10,7 +10,6 @@ export function useMutationObserver(
 ): MutationObserver {
   const observer = useMemo(() => new MutationObserver(callback), [callback])
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (targetNode) {
       observer.observe(targetNode, config)
@@ -18,6 +17,8 @@ export function useMutationObserver(
         observer.disconnect()
       }
     }
+
+    return void 0
   }, [targetNode, config, observer])
 
   return observer
