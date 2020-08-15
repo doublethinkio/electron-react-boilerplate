@@ -4,7 +4,13 @@ module.exports = {
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
     'import/no-named-as-default': 'off',
+    '@typescript-eslint/no-empty-interface': 'warn',
     'react/prop-types': 'off',
+    'no-empty-pattern': 'warn',
+    'no-underscore-dangle': 'off',
+    '@typescript-eslint/naming-convention': 'off',
+    'no-void': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,

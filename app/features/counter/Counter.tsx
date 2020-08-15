@@ -12,7 +12,7 @@ export const Counter: React.FC = () => {
   const counter = useStoreActions((action) => action.counter)
 
   return (
-    <Box>
+    <Box height="100%">
       <Box
         data-testid="backButton"
         style={{
@@ -28,7 +28,7 @@ export const Counter: React.FC = () => {
         justifyContent="center"
         alignItems="center"
         width="100%"
-        height="100vh"
+        height="100%"
       >
         <Box
           data-testid="count"

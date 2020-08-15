@@ -48,6 +48,8 @@ export default merge(baseConfig, {
   target: 'electron-renderer',
 
   entry: [
+    'core-js',
+    'regenerator-runtime/runtime',
     ...(process.env.PLAIN_HMR ? [] : ['react-hot-loader/patch']),
     `webpack-dev-server/client?http://localhost:${port}/`,
     'webpack/hot/only-dev-server',
@@ -174,13 +176,16 @@ export default merge(baseConfig, {
       // SVG Font
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'image/svg+xml',
+        use: [
+          '@svgr/webpack', // https://react-svgr.com/docs/webpack/
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              mimetype: 'image/svg+xml',
+            },
           },
-        },
+        ],
       },
       // Common Image Formats
       {

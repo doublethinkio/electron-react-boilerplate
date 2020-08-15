@@ -26,7 +26,9 @@ module.exports = (api) => {
       [require('@babel/preset-react'), { development }],
     ],
     plugins: [
-      require('@babel/plugin-transform-runtime'),
+      // https://github.com/emotion-js/emotion/tree/master/packages/babel-plugin-emotion
+      require('babel-plugin-emotion'),
+
       [
         require('babel-plugin-module-resolver'),
         {

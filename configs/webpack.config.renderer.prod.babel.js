@@ -23,7 +23,11 @@ export default merge(baseConfig, {
 
   target: process.env.E2E_BUILD ? 'electron-renderer' : 'electron-preload',
 
-  entry: [path.join(__dirname, '..', 'app/index.tsx')],
+  entry: [
+    'core-js',
+    'regenerator-runtime/runtime',
+    path.join(__dirname, '..', 'app/index.tsx'),
+  ],
 
   output: {
     path: path.join(__dirname, '..', 'app/dist'),
@@ -157,13 +161,16 @@ export default merge(baseConfig, {
       // SVG Font
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'image/svg+xml',
+        use: [
+          '@svgr/webpack', // https://react-svgr.com/docs/webpack/
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              mimetype: 'image/svg+xml',
+            },
           },
-        },
+        ],
       },
       // Common Image Formats
       {

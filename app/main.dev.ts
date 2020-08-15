@@ -8,6 +8,8 @@
  * When running `yarn build` or `yarn build-main`, this file is compiled to
  * `./app/main.prod.js` using webpack. This gives us some performance wins.
  */
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import path from 'path'
 import { app, BrowserWindow } from 'electron'
 import { autoUpdater } from 'electron-updater'
@@ -55,6 +57,7 @@ const createWindow = async () => {
   }
 
   mainWindow = new BrowserWindow({
+    frame: false, // frameless
     show: false,
     width: 1024,
     height: 728,
