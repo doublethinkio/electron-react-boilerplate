@@ -37,7 +37,7 @@
   },
   "publish": {
     "provider": "github",
-    "owner": "electron-react-boilerplate",
+    "owner": "doublethinkio",
     "repo": "electron-react-boilerplate",
     "private": false
   }

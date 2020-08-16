@@ -18,6 +18,7 @@ export default {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
+            compact: true,
           },
         },
       },
