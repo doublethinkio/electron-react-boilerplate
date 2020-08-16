@@ -19,6 +19,23 @@ module.exports = (api) => {
   const development = api.env(developmentEnvironments)
 
   return {
+    env: {
+      test: {
+        // https://jestjs.io/docs/en/getting-started.html#using-babel
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: {
+                node: 'current',
+              },
+            },
+          ],
+          require('@babel/preset-typescript'),
+          [require('@babel/preset-react'), { development }],
+        ],
+      },
+    },
     presets: [
       // @babel/preset-env will automatically target our browserslist targets
       require('@babel/preset-env'),
